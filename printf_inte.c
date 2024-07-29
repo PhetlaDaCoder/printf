@@ -3,7 +3,7 @@
 /**
  * printf_inte - prints integers
  * @args: given arguments
- * @i: empty variable
+ *
  * Return: total characters
  */
 
@@ -52,7 +52,7 @@ int printf_inte(va_list args)
  * printf_deci - prints decimals
  * @args: given arguments
  * Return: printed character
- * @i: empty variable
+ *
  */
 
 int printf_deci(va_list args)
