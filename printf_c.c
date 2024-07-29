@@ -3,14 +3,14 @@
 /**
  * printf_c - prints characters
  * @args: taken arguments
- * @result: characters to be printed
- * Return:  printed characters
+ * Return: 1
  */
 
-int printf_c(va_list args, int result)
+int printf_c(va_list args)
 {
-	int character = va_arg(args, int);
+	char str;
 
-	_putchar(character);
-	return (result + 1);
+	str = va_arg(args, int);
+	_putchar(str);
+	return (1);
 }
