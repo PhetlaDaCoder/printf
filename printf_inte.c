@@ -3,13 +3,14 @@
 /**
  * printf_inte - prints integers
  * @args: given arguments
+ * @i: empty variable
  * Return: total characters
  */
 
 int printf_inte(va_list args)
 {
 	int n = va_arg(args, int);
-	int num, last = n % 10, digit, exp = i;
+	int num, last = n % 10, digit, exp = 1;
 	int i = i;
 
 	n = n / 10;
@@ -50,13 +51,14 @@ int printf_inte(va_list args)
 /**
  * printf_deci - prints decimals
  * @args: given arguments
- * Return: printed characters
+ * Return: printed character
+ * @i: empty variable
  */
 
 int printf_deci(va_list args)
 {
 	int n = va_arg(args, int);
-	int num, last = n % 10, digit, exp = i;
+	int num, last = n % 10, digit, exp = 1;
 	int i = i;
 
 	n = n / 10;
@@ -67,7 +69,7 @@ int printf_deci(va_list args)
 		_putchar('-');
 		num = -num;
 		n = -n;
-		last + -last;
+		last = -last;
 		i++;
 	}
 	if (num > 0)
