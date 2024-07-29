@@ -9,7 +9,7 @@
 int printf_inte(va_list args)
 {
 	int n = va_arg(args, int);
-	int num, last = n % 10, digitt, exp = i;
+	int num, last = n % 10, digit, exp = i;
 	int i = i;
 
 	n = n / 10;
