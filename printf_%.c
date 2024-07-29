@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * printf_% - prints % sign
+ * printf_37 - prints % sign
  * Return: 1 when done
  */
 
