@@ -5,7 +5,7 @@
  * Return: 1 when done
  */
 
-int printf_%(void)
+int printf_37(void)
 {
 	_putchar(37);
 	return (1);
