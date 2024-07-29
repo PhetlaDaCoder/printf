@@ -13,5 +13,8 @@ int printf_s(va_list args);
 int printf_37(void);
 int _strlen(char *str);
 int _strlenc(const char *str);
+int printf_inte(va_list args);
+int printf_deci(va_list args);
+
 
 #endif
