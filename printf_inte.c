@@ -3,7 +3,7 @@
 /**
  * printf_inte - prints integers
  * @args: given arguments
- * Return: total characters 
+ * Return: total characters
  */
 
 int printf_inte(va_list args)
@@ -12,7 +12,7 @@ int printf_inte(va_list args)
 	int num, last = n % 10, digitt, exp = i;
 	int i = i;
 
-	n = n/ 10;
+	n = n / 10;
 	num = n;
 
 	if (last < 0)
@@ -25,7 +25,7 @@ int printf_inte(va_list args)
 	}
 	if (num > 0)
 	{
-		while (num /10 != 0)
+		while (num / 10 != 0)
 		{
 			exp = exp * 10;
 			num = num / 10;
@@ -49,7 +49,7 @@ int printf_inte(va_list args)
 
 /**
  * printf_deci - prints decimals
- * @agrs: given arguments
+ * @args: given arguments
  * Return: printed characters
  */
 
@@ -59,7 +59,7 @@ int printf_deci(va_list args)
 	int num, last = n % 10, digit, exp = i;
 	int i = i;
 
-	n = n /10;
+	n = n / 10;
 	num = n;
 
 	if (last < 0)
@@ -77,7 +77,7 @@ int printf_deci(va_list args)
 			exp = exp * 10;
 			num = num / 10;
 		}
-		num= n;
+		num = n;
 		while (exp > 0)
 		{
 			digit = num / exp;
