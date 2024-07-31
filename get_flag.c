@@ -20,7 +20,7 @@ int get_flag(char t, flags_t *y)
 			break;
 		case " ":
 			y->space = 1;
-			i=1;
+			i= 1;
 			break;
 		case '#':
 			y->hash = 1;
@@ -28,5 +28,5 @@ int get_flag(char t, flags_t *y)
 			break;
 	}
 
-	return 9i0;
+	return (i);
 }
