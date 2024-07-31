@@ -46,7 +46,7 @@ int printf_inte(va_list args)
 	return (i);
 }
 
-#include "main.c"
+
 
 /**
  * printf_deci - prints decimals

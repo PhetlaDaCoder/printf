@@ -33,7 +33,7 @@ int printf_unsigned(va_list args)
 		num = n;
 		while (exp > 0)
 		{
-			digit = sum / exp;
+			digit = num / exp;
 			_putchar(digit + '0');
 			num = num - (digit * exp);
 			exp = exp / 10;

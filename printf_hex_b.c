@@ -1,13 +1,12 @@
 #include "main.h"
-#include <stdlib.h>
 
 /**
- * printf_HEX - prints a hexgecimal value
+ * printf_hex_b - prints hex number
  * @num: arguments
  * Return: counter
  */
 
-int printf_HEX(unsigned long int num)
+int printf_hex_b(unsigned long int num)
 {
 	long int i;
 	long int *array;
@@ -30,7 +29,7 @@ int printf_HEX(unsigned long int num)
 	for (i = counter - 1; i >= 0; i--)
 	{
 		if (array[i] > 9)
-			array[i] = array[i] + 7;
+			array[i] = array[i] + 39;
 		_putchar(array[i] + '0');
 	}
 	free(array);

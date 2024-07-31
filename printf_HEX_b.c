@@ -1,18 +1,17 @@
 #include "main.h"
-#include <stdlib.h>
 
 /**
- * printf_HEX - prints a hexgecimal value
- * @num: arguments
+ * printf_HEX_b - prints hex number
+ * @num: value to print
  * Return: counter
  */
 
-int printf_HEX(unsigned long int num)
+int printf_HEX_b(unsigned int num)
 {
-	long int i;
-	long int *array;
-	long int counter = 0;
-	unsigned long int temp = num;
+	int i;
+	int *array;
+	int counter = 0;
+	unsigned int tem = num;
 
 	while (num / 16 != 0)
 	{
@@ -20,12 +19,12 @@ int printf_HEX(unsigned long int num)
 		counter++;
 	}
 	counter++;
-	array = malloc(counter * sizeof(long int));
+	array = malloc(counter * sizeof(int));
 
 	for (i = 0; i < counter; i++)
 	{
-		array[i] = temp % 16;
-		temp = temp / 16;
+		array[i] = tem % 16;
+		tem /= 16;
 	}
 	for (i = counter - 1; i >= 0; i--)
 	{

@@ -11,7 +11,7 @@ int printf_o(va_list val)
 	int i;
 	int *array;
 	int counter = 0;
-	unsigned int num = va_arg(val, unsiged int);
+	unsigned int num = va_arg(val, unsigned int);
 	unsigned int tem = num;
 
 	while (num / 8 != 0)
@@ -22,7 +22,7 @@ int printf_o(va_list val)
 	counter++;
 	array = malloc(counter * sizeof(int));
 
-	for (o = 0; i < counter; i++)
+	for (i = 0; i < counter; i++)
 	{
 		array[i] = tem % 8;
 		tem /= 8;

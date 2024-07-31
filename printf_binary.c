@@ -26,7 +26,7 @@ int printf_binar(va_list val)
 			count++;
 		}
 	}
-	if (count == o)
+	if (count == 0)
 	{
 		count++;
 		_putchar('0');
