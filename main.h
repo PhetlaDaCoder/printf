@@ -10,14 +10,14 @@
 /**
  * struct format - converter for printf
  * @ph: char type pointer
- * @function:  function for conversion
+ * @f:  function for conversion
  */
 
 typedef struct format
 {
 	char *ph;
 	int (*f)();
-}convert_match;
+} convert_match;
 
 int _printf(const char *format, ...);
 int _putchar(char c);
