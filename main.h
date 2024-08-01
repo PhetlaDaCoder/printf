@@ -39,6 +39,5 @@ int printf_HEX_b(unsigned int num);
 int printf_p(va_list val);
 int printf_rev(va_list args);
 int printf_rot13(va_list args);
-int get_flag(char t, flags_t *y);
 
 #endif
