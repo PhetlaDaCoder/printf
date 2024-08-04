@@ -10,7 +10,7 @@ int _printf(const char * const format, ...)
 	convert_match p[] = {
 		{"%s", printf_S}, {"%c", printf_c},
 		{"%%", printf_37},
-		{"%i", printf_inte}, {"%d", printf_deci}, {"%r", printf_rev},
+		{"%i", printf_inte}, {"%d", printf_inte}, {"%r", printf_rev},
 		{"%R", printf_rot13}, {"%b", printf_binar},
 		{"%u", printf_unsigned},
 		{"%o", printf_o}, {"%x", printf_hex}, {"%X", printf_HEX},
