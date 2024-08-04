@@ -1,95 +1,60 @@
 #include "main.h"
+#include <stdio.h>
+#include <string.h>
 
 /**
  * printf_inte - prints integers
- * @args: given arguments
+ * @val: va_list
+ * @args: string
  *
- * Return: total characters
+ * Return: length
  */
 
-int printf_inte(va_list args)
+int printf_inte(va_list  val, char *args)
 {
-	int n = va_arg(args, int);
-	int num, last = n % 10, digit, exp = 1;
-	int i = i;
+	long int num, len = 0;
+	char st[20];
+	(void)args;
 
-	n = n / 10;
-	num = n;
+	num = va_arg(val, long int);
+	if (*args == 'l')
+		printf(st, "%ld", num);
+	else if (*args == 'h')
+		printf(st, "%hd", num);
+	else
+		printf(st, "%d", num);
+	handle_args(args, st);
+	len = strlen(st);
 
-	if (last < 0)
-	{
-		_putchar('-');
-		num = -num;
-		n = -n;
-		last = -last;
-		i++;
-	}
-	if (num > 0)
-	{
-		while (num / 10 != 0)
-		{
-			exp = exp * 10;
-			num = num / 10;
-		}
-		num = n;
-		while (exp > 0)
-		{
-			digit = num / exp;
-			_putchar(digit + '0');
-			num = num - (digit * exp);
-			exp = exp / 10;
-			i++;
-		}
-	}
-	_putchar(last + '0');
-
-	return (i);
+	write(1, st, len);
+	return (len);
 }
 
 
 
 /**
  * printf_deci - prints decimals
- * @args: given arguments
- * Return: printed character
+ * @val: va_list
+ * @args: string value
+ * Return: length
  *
  */
 
-int printf_deci(va_list args)
+int printf_deci(va_list val, char *args)
 {
-	int n = va_arg(args, int);
-	int num, last = n % 10, digit, exp = 1;
-	int i = i;
+	long int num, len = 0;
+	char st[20];
+	(void)args;
 
-	n = n / 10;
-	num = n;
-
-	if (last < 0)
-	{
-		_putchar('-');
-		num = -num;
-		n = -n;
-		last = -last;
-		i++;
-	}
-	if (num > 0)
-	{
-		while (num / 10 != 0)
-		{
-			exp = exp * 10;
-			num = num / 10;
-		}
-		num = n;
-		while (exp > 0)
-		{
-			digit = num / exp;
-			_putchar(digit + '0');
-			num = num - (digit * exp);
-			exp = exp / 10;
-			i++;
-		}
-	}
-	_putchar(last + '0');
-
-	return (i);
+	num = va_arg(val, long int);
+	if (*args == 'l')
+		printf(st, "%ld", num);
+	else if (*args == 'h')
+		printf(st, "%hd", num);
+	else
+		printf(st, "%d", num);
+	handle_args(args, str);
+	len = strlen(st);
+	write(1, st, len);
+	return (len);
 }
