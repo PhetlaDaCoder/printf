@@ -18,11 +18,11 @@ int printf_inte(va_list  val, char *flags)
 
 	num = va_arg(val, long int);
 	if (*flags == 'l')
-		printf(st, "%ld", num);
+		sprintf(st, "%ld", num);
 	else if (*flags == 'h')
-		printf(st, "%hd", num);
+		sprintf(st, "%hd", num);
 	else
-		printf(st, "%d", num);
+		sprintf(st, "%d", num);
 	handle_flags(flags, st);
 	len = strlen(st);
 
@@ -48,11 +48,11 @@ int printf_deci(va_list val, char *flags)
 
 	num = va_arg(val, long int);
 	if (*flags == 'l')
-		printf(st, "%ld", num);
+		sprintf(st, "%ld", num);
 	else if (*flags == 'h')
-		printf(st, "%hd", num);
+		sprintf(st, "%hd", num);
 	else
-		printf(st, "%d", num);
+		sprintf(st, "%d", num);
 	handle_flags(flags, str);
 	len = strlen(st);
 	write(1, st, len);
