@@ -3,19 +3,31 @@
 /**
  * printf_p - prints hec number
  * @val: va_list
- * @word: string
  *
- * Return: length
+ * Return: address
  */
 
-int printf_p(va_list val, char *word)
+int printf_p(va_list val)
 {
-	void *p = va_arg(val, void *);
-	char str[30];
-	int len = 0;
-	(void)word;
+	void *p;
+	char *s = "(nil)";
+	long int a;
+	int b;
+	int i;
 
-	sprintf(str, p);
-	len += write(1, str, strlen(str));
-	return (len);
+	p = va_arg(val, void*);
+	if (p == NULL)
+	{
+		for (i = 0; s[i] != '\0'; i++)
+		{
+			_putchar(s[i]);
+		}
+		return (i);
+	}
+
+	a =(unsigned long int)p;
+	_putchar('o');
+	_putchar('x');
+	b = printf_hex_b.c(a);
+	return (b + 2);
 }
