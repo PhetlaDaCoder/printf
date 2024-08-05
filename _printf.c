@@ -32,12 +32,12 @@ int _printf(const char *format, ...)
 				count += _putchar('%');
 				continue;
 			}
-			while (get_flag(*p, &flag))
+			while (get_flag(*p, &flags))
 				p++;
-			pfunc = printf_handl.c(*p);
-			count += (pfunc)
-				? pfunc(arguments, &flag)
-				: _printf("%%%c", *p;
+			pf = printf_handl(*p);
+			count += (pf)
+				? pf(arguments, &flags)
+				: _printf("%%%c", *p);
 		} else
 			count += _putchar(*p);
 	}

@@ -19,8 +19,8 @@ int printf_rev(va_list q, flag *w)
 	while (s[e])
 		e++;
 
-	for (j = e - 1; j >= 0; j--)
-		_putchar(s[j]);
+	for (k = e - 1; k >= 0; k--)
+		_putchar(s[k]);
 
 	return (e);
 }

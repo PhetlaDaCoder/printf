@@ -1,4 +1,4 @@
-#ifndef MAIN_h
+#ifndef MAIN_H
 #define MAIN_H
 
 #include <stdlib.h>
@@ -49,5 +49,6 @@ char *convert(unsigned long int num, int base, int lowercase);
 int _puts(char *str);
 int get_flag(char a, flag *p);
 int (*printf_handl(char a))(va_list, flag *);
+int _putchar(char c);
 
 #endif

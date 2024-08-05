@@ -18,7 +18,7 @@ int printf_p(va_list a, flag *s)
 
 	if (!q)
 		return (_puts("(nil)"));
-	str = convert(p, 16, 1);
+	str = convert(q, 16, 1);
 	counter += _puts("0x");
 	counter += _puts(str);
 	return (counter);

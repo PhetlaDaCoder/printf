@@ -10,9 +10,9 @@
 int printf_int(va_list args, flag *p)
 {
 	int m = va_arg(args, int);
-	int count = counter(n);
+	int count = counter(m);
 
-	if (p->space == 1 && p->plus == 0 && n >= 0)
+	if (p->space == 1 && p->plus == 0 && m >= 0)
 		count += _putchar(' ');
 	if (p->plus == 1 && m >= 0)
 		count += _putchar('+');

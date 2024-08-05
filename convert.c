@@ -1,4 +1,4 @@
-#include "main.c"
+#include "main.h"
 
 /**
  * convert - converts number and bas e to string

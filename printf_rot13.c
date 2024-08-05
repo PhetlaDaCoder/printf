@@ -1,35 +1,34 @@
 #include "main.h"
 
 /**
- * printf_rot13 - prints rot13
- * _putchar: prints argument
- * @a: arguments
+ * printf_rot13 - encodes string in rot 13
+ * @a: argument
  * @m: pointer
- * Return: length of string
+ * Return: length
  */
 
 int printf_rot13(va_list a, flag *m)
 {
-	int r, t;
+	int i, j;
 	char rot13[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
-	char ROT13[] = "nopqrstuvwxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM"
+	char ROT13[] = "nopqrstuvwxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM";
 	char *s = va_arg(a, char *);
 
-
 	(void)m;
-	for (t = 0; r[t]; t++)
+	for (j = 0; s[j]; j++)
 	{
-		if (s[t] < 'A' || (s[t] > 'Z' && s[t]< 'a') || s[t] > 'z')
-			_putchar(s[t]);
+		if (s[j] < 'A' || (s[j] > 'Z' && s[j] < 'a') || s[j] > 'z')
+			_putchar(s[j]);
 		else
 		{
-			for (r = 0; r <= 52; r++)
+			for (i = 0; i <= 52; i++)
 			{
-				if (s[t] == rot13[r])
-					_putchar(ROT13[r]);
+				if (s[j] == rot13[i])
+					_putchar(ROT13[i]);
 			}
 		}
 	}
-	return (t);
+
+	return (j);
 }
 
