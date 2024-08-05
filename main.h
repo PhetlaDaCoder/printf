@@ -1,43 +1,53 @@
-#ifndef MAIN_H
+#ifndef MAIN_h
 #define MAIN_H
 
-#include <stdio.h>
-#include <stdarg.h>
-#include <unistd.h>
-#include <limits.h>
 #include <stdlib.h>
+#include <stdarg.h>
 
 /**
- * struct format - converter for printf
- * @ph: char type pointer
- * @f:  function for conversion
+ * struct flags - contains flags
+ * @plus: flag for '+'
+ * @space: flag fpr ' '
+ * @hash: flag for '#'
  */
-
-typedef struct format
+typedef struct flags
 {
-	char *ph;
-	int (*f)();
-} convert_match;
+	int plus;
+	int space;
+	int hash;
+} flag;
+
+/**
+ * struct printHandler - choose right function
+ * @c: format
+ * @f: pointer
+ */
+typedef struct printHandler
+{
+	char c;
+	int (*f)(va_list ap, flag *f);
+} ph;
 
 int _printf(const char *format, ...);
-int _putchar(char c);
-int printf_c(va_list args);
-int printf_s(va_list args);
-int printf_37(void);
-int _strlen(char *str);
-int _strlenc(const char *str);
-int printf_inte(va_list  val, char *flags);
-int printf_deci(va_list val, char * flags;
-int printf_binar(va_list val, char *word);
-int printf_o(va_list val);
-int printf_unsigned(va_list args);
-int printf_hex(va_list val);
-int printf_HEX(unsigned long int num);
-int printf_S(va_list val);
-int printf_hex_b(unsigned long int num);
-int printf_HEX_b(unsigned int num);
-int printf_p(va_list val);
-int printf_rev(va_list args);
-int printf_rot13(va_list args);
+int printf_int(va_list args, flag *p);
+int printf_unsi(va_list n, flag *p);
+void printf_num(int m);
+int counter(int o);
+void printf_num(int m);
+int printf_S(va_list a, flag *b);
+int printf_rev(va_list q, flag *w);
+int printf_rot13(va_list a, flag *m);
+int printf_37(va_list a, flag *b);
+int printf_hex(va_list q, flag *w);
+int printf_HEX(va_list q, flag *w);
+int printf_bin(va_list a, flag *s);
+int printf_oct(va_list a, flag *s);
+int printf_str(va_list a, flag *p);
+int printf_char(va_list a, flag *s);
+int printf_p(va_list a, flag *s);
+char *convert(unsigned long int num, int base, int lowercase);
+int _puts(char *str);
+int get_flag(char a, flag *p);
+int (*printf_handl(char a))(va_list, flag *);
 
 #endif

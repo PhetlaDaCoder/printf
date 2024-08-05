@@ -1,33 +1,25 @@
 #include "main.h"
 
 /**
- * printf_p - prints hec number
- * @val: va_list
- *
- * Return: address
+ * printf_p - prints address
+ * @a: arguments
+ * @s: pointer
+ * Return: printed chars
  */
 
-int printf_p(va_list val)
+int printf_p(va_list a, flag *s)
 {
-	void *p;
-	char *s = "(nil)";
-	long int a;
-	int b;
-	int i;
+	char *str;
+	unsigned long int q = va_arg(a, unsigned long int);
 
-	p = va_arg(val, void*);
-	if (p == NULL)
-	{
-		for (i = 0; s[i] != '\0'; i++)
-		{
-			_putchar(s[i]);
-		}
-		return (i);
-	}
+	register int counter = 0;
 
-	a =(unsigned long int)p;
-	_putchar('o');
-	_putchar('x');
-	b = printf_hex_b.c(a);
-	return (b + 2);
+	(void)s;
+
+	if (!q)
+		return (_puts("(nil)"));
+	str = convert(p, 16, 1);
+	counter += _puts("0x");
+	counter += _puts(str);
+	return (counter);
 }

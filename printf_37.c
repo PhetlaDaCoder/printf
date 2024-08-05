@@ -1,12 +1,16 @@
 #include "main.h"
 
 /**
- * printf_37 - prints % sign
- * Return: 1 when done
+ * printf_37 - prints percentage
+ * @a: arguements
+ * @b: pointer
+ * @_putchar: prints given argument
+ * Return: prints chars
  */
 
-int printf_37(void)
+int printf_37(va_list a, flag *b)
 {
-	_putchar(37);
-	return (1);
+	(void)a;
+	(void)b;
+	return (_putchar('%'));
 }

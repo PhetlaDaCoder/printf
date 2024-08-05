@@ -1,40 +1,36 @@
 #include "main.h"
 
 /**
- * printf_S - prints special string
- * @val: parameter
- * Return: interger
+ * printf_S - Non printable chars
+ * @a: arguments
+ * @b: pointer
+ * _putchar - prints given argument
+ * Return: char printed
  */
 
-int printf_S(va_list val)
+int printf_S(va_list a, flag *b)
 {
-	char *s;
-	int i, length = 0;
-	int value;
+	int r, counter = 0;
+	char *hold;
+	char *s = va_arg(a, char *);
 
-	s = va_arg(val, char *);
-	if (s == NULL)
-		s = "(null)";
-	for (i = 0; s[i] != '\0'; i++)
+	(void)b;
+	if (!s)
+		return (_puts("(null)"));
+
+	for (r = 0; s[r]; r++)
 	{
-		if (s[i] < 32 || s[i] >= 127)
+		if (s[r] > 0 && (s[r] < 32 || s[r] >= 127))
 		{
-			_putchar('\\');
-			_putchar('x');
-			length = length + 2;
-			value = s[i];
-			if (value < 16)
-			{
-				_putchar('0');
-				length++;
-			}
-			length = length + printf_HEX(value);
+			_puts("\\x");
+			counter += 2;
+			hold = convert(s[r], 16, 0);
+			if (!hold[1])
+				counter += _putchar('0');
+			counter += _puts(hold);
 		}
 		else
-		{
-			_putchar(s[i]);
-			length++;
-		}
+			counter += _putchar(s[r]);
 	}
-	return (length);
+	return (counter);
 }
